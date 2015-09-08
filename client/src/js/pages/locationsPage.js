@@ -7,6 +7,15 @@ var LocationView = PageView.extend({
   id: 'locations',
   template: require('../../templates/pages/locations.hbs'),
 
+  buttonEvents: {
+    right: 'goToHomePage',
+    left: 'back'
+  },
+
+  goToHomePage: function() {
+    global.App.navigate('');
+  },
+
   render: function() {
 
     this.$el.html(this.template());
