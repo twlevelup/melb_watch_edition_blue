@@ -3,7 +3,8 @@
 var AppRouter = require('../src/js/router.js'),
   PageView = require('../src/js/framework/page'),
   HomePage = require('../src/js/pages/homePage'),
-  ContactPage = require('../src/js/pages/contactsPage');
+  ContactPage = require('../src/js/pages/contactsPage'),
+  LocationPage = require('../src/js/pages/locationsPage');
 
 describe('Application Router', function() {
 
@@ -29,6 +30,14 @@ describe('Application Router', function() {
         router.contacts();
         var isContactPage = router.renderView.calls.argsFor(0)[0] instanceof ContactPage;
         expect(isContactPage).toBeTruthy();
+      });
+    });
+
+    describe('#locations', function() {
+      it('should load the locations screen', function() {
+        router.locations();
+        var isLocationsPage = router.renderView.calls.argsFor(0)[0] instanceof LocationPage;
+        expect(isLocationsPage).toBeTruthy();
       });
     });
 
