@@ -39,4 +39,10 @@ describe('The Locations Page', function() {
       });
     });
   });
+
+  /*describe('JSON Suburb List', function(){
+    it('should not be an empty list', function(){
+      expect(locationsPage.locations.length > 0).toBeTruthy();
+    });
+  });*/
 });

@@ -1,0 +1,12 @@
+#locations ul {
+  list-style: none;
+}
+#locations li:hover{
+  color: #000000;
+}
+
+.selected {
+  width: 100%;
+  background-color: #bdc3c7;
+  color: white;
+}

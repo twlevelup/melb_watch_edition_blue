@@ -14,14 +14,6 @@ var LocationsView = PageView.extend({
     left: 'back'
   },
 
-  events: {
-    'click .clickable': 'selectSuburb'
-  },
-
-  selectSuburb: function(event) {
-    $(event.currentTarget).addClass('selected');
-  },
-
   initialize: function() {
     var suburbs = require('../../json/suburbs.json');
     this.locations = new Locations(suburbs);
@@ -35,14 +27,12 @@ var LocationsView = PageView.extend({
     this.$el.html(this.template());
 
     var locationsHTML = document.createDocumentFragment();
-    var list = document.createElement('ul');
     this.locations.each(function(location) {
-      list.appendChild(new LocationView({
+      $(locationsHTML).append(new LocationView({
         model: location
       }).render().el);
     }, this);
 
-    $(locationsHTML).append(list);
     this.$el.append(locationsHTML);
 
     return this;
