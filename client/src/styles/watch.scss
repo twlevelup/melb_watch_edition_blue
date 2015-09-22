@@ -41,8 +41,10 @@
 }
 
 #notification_message_display {
-  height: 70%;
-}
+  height: 90%; 
+  word-wrap: break-word;
+  position: relative;
+  overflow: auto; }
 
 #navigation-button-right {
   float:right;
