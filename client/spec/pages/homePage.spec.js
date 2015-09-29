@@ -17,11 +17,11 @@ describe('The Home Page', function() {
 
     describe('right', function() {
 
-      it('should take the user to the contacts page', function() {
+      it('should take the user to the facts page', function() {
         spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('right');
-        expect(global.App.navigate).toHaveBeenCalledWith('contacts');
+        expect(global.App.navigate).toHaveBeenCalledWith('quickfacts');
       });
     });
 
@@ -47,10 +47,16 @@ describe('The Home Page', function() {
 
   describe('rendering', function() {
 
-    it('should produce the correct HTML', function() {
+    /*// Changing home page
+    it('should contain a link to the facts page', function() {
       homePage.render();
-      expect(homePage.$el).toContainText('Hello, World!');
+      expect(homePage.$el.find('ul li a').attr("href")).toEqual("/#quickfacts");
     });
+
+    it('should have the title of Facts Page', function() {
+      homePage.render();
+      expect(homePage.$el.find('ul li a').text()).toEqual("Quick Facts");
+    });*/
 
     it('returns the view object', function() {
       expect(homePage.render()).toEqual(homePage);

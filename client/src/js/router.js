@@ -4,8 +4,10 @@ var Router = require('./framework/router.js'),
   HomePage = require('./pages/homePage'),
   ContactsPage = require('./pages/contactsPage'),
   LocationsPage = require('./pages/locationsPage'),
+  FactsPage = require('./pages/factsPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
+  factsPage = new FactsPage(),
   locationsPage = new LocationsPage();
 
 var AppRouter = Router.extend({
@@ -13,7 +15,8 @@ var AppRouter = Router.extend({
   routes: {
     '': 'home',
     contacts: 'contacts',
-    locations: 'locations'
+    locations: 'locations',
+    quickfacts: 'quickfacts'
   },
 
   home: function() {
@@ -26,6 +29,10 @@ var AppRouter = Router.extend({
 
   locations: function() {
     this.renderView(locationsPage);
+  },
+
+  quickfacts: function(){
+    this.renderView(factsPage);
   }
 
 });
