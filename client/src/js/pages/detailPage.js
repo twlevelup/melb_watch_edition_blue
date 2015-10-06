@@ -9,11 +9,21 @@ var DetailView = PageView.extend({
   template: require('../../templates/pages/factDetail.hbs'),
 
   buttonEvents: {
-    left: 'back'
+    left: 'back',
+    top: 'scrollUp',
+    bottom: 'scrollDown',
   },
 
   initialize: function() {
 
+  },
+
+  scrollUp: function() {
+    $('#watch-face').animate({scrollTop: '-=70px'});
+  },
+
+  scrollDown: function() {
+    $('#watch-face').animate({scrollTop: '+=70px'});
   },
 
   createDetail: function() {
