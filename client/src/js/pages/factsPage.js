@@ -37,7 +37,7 @@ var FactsView = PageView.extend({
       {
         id: '4',
         heading: 'Prepare an Emergency Plan',
-        text: 'Flooding can happen at any time, with little warning. People who have planned and prepared for emergencies can help to reduce the impact of emergencies on their homes and families and recover faster. Your emergency plan should include: Emergencies that might affect you How they might affect you What you will do before, during and after an emergency Where you will go if you evacuate and the safest route to get there A list of contact numbers you may need '
+        text: 'Flooding can happen at any time, with little warning. People who have planned and prepared for emergencies can help to reduce the impact of emergencies on their homes and families and recover faster.'
       }
     ]);
   },
@@ -64,7 +64,7 @@ var FactsView = PageView.extend({
 
   selectFact: function() {
     var id = this.facts.at(this.selectedFact).attributes.id;
-    global.App.navigate('/quickfacts/'+ id);
+    global.App.navigate('/quickfacts/' + id);
   },
 
   goToHomePage: function() {
