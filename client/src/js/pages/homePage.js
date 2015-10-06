@@ -11,11 +11,16 @@ var homeScreen = PageView.extend({
   buttonEvents: {
     right: 'goToFacts',
     top: 'scrollUp',
-    bottom: 'scrollDown'
+    bottom: 'scrollDown',
+    left: 'goToLocations'
   },
 
   goToFacts: function() {
     global.App.navigate('quickfacts');
+  },
+
+  goToLocations: function() {
+    global.App.navigate('locations');
   },
 
   scrollUp: function() {
