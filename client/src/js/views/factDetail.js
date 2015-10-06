@@ -2,17 +2,16 @@
 
 var FactDetailView = Backbone.View.extend({
 
-  tagName: 'p',
+  tagName: 'div',
 
   template: require('../../templates/views/factDetail.hbs'),
 
-  initialize: function(text) {
-    this.text = text;
+  initialize: function() {
     _.bindAll(this, 'render');
   },
 
   render: function() {
-    this.$el.html(this.template());
+    this.$el.html(this.template(this.model.attributes));
     return this;
   }
 
