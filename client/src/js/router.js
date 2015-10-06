@@ -5,6 +5,7 @@ var Router = require('./framework/router.js'),
   ContactsPage = require('./pages/contactsPage'),
   LocationsPage = require('./pages/locationsPage'),
   FactsPage = require('./pages/factsPage'),
+  DetailPage = require('./pages/detailPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   factsPage = new FactsPage(),
@@ -16,7 +17,8 @@ var AppRouter = Router.extend({
     '': 'home',
     contacts: 'contacts',
     locations: 'locations',
-    quickfacts: 'quickfacts'
+    quickfacts: 'quickfacts',
+    'quickfacts/:id': 'factsdetailview'
   },
 
   home: function() {
@@ -33,6 +35,14 @@ var AppRouter = Router.extend({
 
   quickfacts: function(){
     this.renderView(factsPage);
+  },
+
+  factsdetailview: function(id) {
+    // FIX ME
+    var data = factsPage.facts.get(id);
+
+    var detailPage = new DetailPage({ model: data });
+    this.renderView(detailPage);
   }
 
 });
