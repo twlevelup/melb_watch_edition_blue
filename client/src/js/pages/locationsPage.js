@@ -2,7 +2,7 @@
 
 var PageView = require('../framework/page');
 var Locations = require('../collections/locations');
-LocationView = require('../views/location');
+var LocationView = require('../views/location');
 
 var LocationsView = PageView.extend({
 
