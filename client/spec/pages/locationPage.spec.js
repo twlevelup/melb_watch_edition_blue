@@ -31,18 +31,18 @@ describe('The Locations Page', function() {
       locationsPage.setButtonEvents();
     });
 
-    describe('right', function() {
+    describe('left', function() {
       it('should take the user to the home page', function() {
         spyOn(global.App, 'navigate');
-        locationsPage.trigger('right');
+        locationsPage.trigger('left');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
     });
   });
 
-  /*describe('JSON Suburb List', function(){
+  describe('JSON Suburb List', function(){
     it('should not be an empty list', function(){
       expect(locationsPage.locations.length > 0).toBeTruthy();
     });
-  });*/
+  });
 });
