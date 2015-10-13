@@ -31,13 +31,13 @@ describe('The Locations Page', function() {
       locationsPage.setButtonEvents();
     });
 
-    describe('right', function() {
+    /*describe('right', function() {
       it('should take the user to the home page', function() {
         spyOn(global.App, 'navigate');
         locationsPage.trigger('right');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
-    });
+    });*/
   });
 
   /*describe('JSON Suburb List', function(){

@@ -11,7 +11,7 @@ var DetailView = PageView.extend({
   buttonEvents: {
     left: 'back',
     top: 'scrollUp',
-    bottom: 'scrollDown',
+    bottom: 'scrollDown'
   },
 
   initialize: function() {
