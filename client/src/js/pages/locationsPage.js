@@ -23,6 +23,9 @@ var LocationsView = PageView.extend({
       lis.eq(this.selectedSuburb).removeClass('selected');
       this.selectedSuburb = nextIndex;
       lis.eq(this.selectedSuburb).addClass('selected');
+      
+      // Compensate for removing scroll bars
+      $('#watch-face').animate({scrollTop: '-=70px'});
     }
   },
 
@@ -33,6 +36,9 @@ var LocationsView = PageView.extend({
       lis.eq(this.selectedSuburb).removeClass('selected');
       this.selectedSuburb = nextIndex;
       lis.eq(this.selectedSuburb).addClass('selected');
+
+      // Compensate for removing scroll bars
+      $('#watch-face').animate({scrollTop: '+=70px'});
     }
   },
 
