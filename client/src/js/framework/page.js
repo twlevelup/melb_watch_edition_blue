@@ -13,7 +13,6 @@ var pageView = Backbone.View.extend({
   back: function() {
     history.back();
   }
-
 });
 
 module.exports = pageView;

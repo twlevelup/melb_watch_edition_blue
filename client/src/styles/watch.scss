@@ -1,12 +1,46 @@
 .screen{
-  padding-left: 1.5em;
+  padding-left: 0.5em; //changed from original value of 1.5em
   font-family: monospace;
   color: #FFF;
 }
 
+.home_title{
+  text-align:center;
+}
+
+.icon_bottom{
+    position: absolute;
+    bottom: 0;
+    left: 115px;
+}
+
+.icon_top{
+    position: absolute;
+    top:0;
+    left: 115px;
+}
+
+.icon_left{
+    position: absolute;
+    left: 0;
+    top: 103px;
+}
+
+.icon_right{
+    position: absolute;
+    right: -7px;
+    top: 103px;
+}
+
+.logo{
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+}
+
 #watch-face{
   height: 240px;
-  position: absolute;
+  position: relative;
   width: 240px;
   top: 30px;
   left: 20px;
@@ -15,7 +49,7 @@
 }
 
 #watch{
-  background-color: #00F;
+  background-color: #000;
   display: inline-block;
   vertical-align: top;
 }
