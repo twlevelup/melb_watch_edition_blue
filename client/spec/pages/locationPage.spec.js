@@ -28,7 +28,13 @@ describe('The Locations Page', function() {
   describe('button events', function() {
 
     beforeEach(function() {
-      locationsPage.setButtonEvents();
+      locationsPage.setButtonEvents();    
+    });
+
+    it('Should move the slected suburb index', function() {
+      expect(locationsPage.selectedSuburb).toEqual(0);
+      locationsPage.nextSuburb();
+      expect(locationsPage.selectedSuburb).toEqual(1);
     });
 
     describe('left', function() {
@@ -37,6 +43,33 @@ describe('The Locations Page', function() {
         locationsPage.trigger('left');
         expect(global.App.navigate).toHaveBeenCalledWith('');
       });
+    });
+
+    describe('right', function() {
+      it('Should select a suburb', function() {
+        expect(locationsPage.selected.length).toEqual(0);
+        locationsPage.selectSuburb();
+        expect(locationsPage.selected.length).toEqual(1);
+      });
+
+      it('Should deselect a suburb', function() {
+        locationsPage.selectSuburb();
+        expect(locationsPage.selected.length).toEqual(1);
+
+        locationsPage.deSelectSuburb();
+        expect(locationsPage.selected.length).toEqual(0);
+      });
+
+      // it('Should select 2 suburbs then remove the first', function() {
+      //   locationsPage.selectSuburb();
+      //   locationsPage.nextSuburb();
+
+      //   locationsPage.selectSuburb();
+      //   locationsPage.previousSuburb();
+      //   locationsPage.selectSuburb();
+      
+      //   expect(locationsPage.selected.at(0).attributes.name).toEqual('Altona');
+      // });
     });
   });
 

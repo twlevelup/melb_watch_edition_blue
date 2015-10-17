@@ -20,9 +20,9 @@ var LocationsView = PageView.extend({
     var nextIndex = this.selectedSuburb - 1;
     if (nextIndex >= 0 && nextIndex < this.locations.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedSuburb).removeClass('hightlight');
+      lis.eq(this.selectedSuburb).removeClass('highlight');
       this.selectedSuburb = nextIndex;
-      lis.eq(this.selectedSuburb).addClass('hightlight');
+      lis.eq(this.selectedSuburb).addClass('highlight');
       
       // Compensate for removing scroll bars
       $('#watch-face').animate({scrollTop: '-=70px'});
@@ -35,7 +35,7 @@ var LocationsView = PageView.extend({
       var lis = this.$el.find('li');
       lis.eq(this.selectedSuburb).removeClass('highlight');
       this.selectedSuburb = nextIndex;
-      lis.eq(this.selectedSuburb).addClass('hightlight');
+      lis.eq(this.selectedSuburb).addClass('highlight');
 
       // Compensate for removing scroll bars
       $('#watch-face').animate({scrollTop: '+=70px'});
@@ -43,11 +43,10 @@ var LocationsView = PageView.extend({
   },
 
   selectSuburb: function() {
+    var lis = this.$el.find('li');
     var suburb = this.locations.at(this.selectedSuburb);
-    this.selected.push(suburb);    
-
-
-
+    lis.eq(this.selectedSuburb).addClass('selected');
+    this.selected.push(suburb);
   },
 
   deSelectSuburb: function() {
@@ -82,7 +81,7 @@ var LocationsView = PageView.extend({
     this.$el.append(locationsHTML);
 
     var lis = this.$el.find('li');
-    lis.eq(this.selectedSuburb).addClass('hightlight');
+    lis.eq(this.selectedSuburb).addClass('highlight');
 
     return this;
   }
