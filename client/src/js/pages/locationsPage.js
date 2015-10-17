@@ -20,9 +20,12 @@ var LocationsView = PageView.extend({
     var nextIndex = this.selectedSuburb - 1;
     if (nextIndex >= 0 && nextIndex < this.locations.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedSuburb).removeClass('selected');
+      lis.eq(this.selectedSuburb).removeClass('hightlight');
       this.selectedSuburb = nextIndex;
-      lis.eq(this.selectedSuburb).addClass('selected');
+      lis.eq(this.selectedSuburb).addClass('hightlight');
+      
+      // Compensate for removing scroll bars
+      $('#watch-face').animate({scrollTop: '-=70px'});
     }
   },
 
@@ -30,15 +33,26 @@ var LocationsView = PageView.extend({
     var nextIndex = this.selectedSuburb + 1;
     if (nextIndex < this.locations.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedSuburb).removeClass('selected');
+      lis.eq(this.selectedSuburb).removeClass('highlight');
       this.selectedSuburb = nextIndex;
-      lis.eq(this.selectedSuburb).addClass('selected');
+      lis.eq(this.selectedSuburb).addClass('hightlight');
+
+      // Compensate for removing scroll bars
+      $('#watch-face').animate({scrollTop: '+=70px'});
     }
   },
 
   selectSuburb: function() {
     var suburb = this.locations.at(this.selectedSuburb);
-    this.selected.push(suburb);
+    this.selected.push(suburb);    
+
+
+
+  },
+
+  deSelectSuburb: function() {
+    var suburb = this.locations.at(this.selectedSuburb);
+    this.selected.pop (suburb);    
   },
 
   initialize: function() {
@@ -68,7 +82,7 @@ var LocationsView = PageView.extend({
     this.$el.append(locationsHTML);
 
     var lis = this.$el.find('li');
-    lis.eq(this.selectedSuburb).addClass('selected');
+    lis.eq(this.selectedSuburb).addClass('hightlight');
 
     return this;
   }

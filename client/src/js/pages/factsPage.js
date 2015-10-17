@@ -31,7 +31,6 @@ var FactsView = PageView.extend({
        { id: '3',
         title: 'Bushfire',
         text: '<h3 style="color:#F18520">Your Bushfire Plan</h3><p>You don’t have to live in the country to be at risk of fire. If you live near areas that have significant bush, forest, long grass, or coastal scrub, then you need to plan ahead for the fire season. Not everyone thinks clearly in an emergency. A written, and preferably well-practised plan, will help you remember what needs to be done during a crisis.</p><h3 style="color:#F18520">Why should I leave early?</h3><p>Because fires can start and spread very quickly in some conditions, leaving early is by far the safest option for anyone in a high-risk bushfire area. Many people have died trying to leave their homes at the last minute. Even a fire that is kilometres away could be at your door in minutes. In certain conditions, embers can travel many kilometres in front of a fire and a grassfire can travel faster than you can run. Wind changes are unpredictable and can rapidly change the direction or size of a fire.Driving in a bushfire is extremely dangerous, and potentially life threatening. A drive that would normally take five minutes could take two hours.  In a bushfire, people may be confused, disoriented and physically or psychologically stressed. In these conditions, making good decisions becomes very difficult.</p><h3 style="color:#F18520">What leaving early means</h3><p>Leaving early means being away from high-risk areas before there are any signs of fire.In other words, leaving early is a precaution you take just in case there is a fire – because in some conditions, any fire that starts is likely to be uncontrollable. Leaving early does not mean waiting for a warning or a siren. It does not mean waiting to see or smell smoke. And it certainly does not mean waiting for a knock on the door.</p><h3 style="color:#F18520">Defending Your Property</h3><p>Planning to stay and defend is a big decision. Most homes in high-risk bushfire areas are not defendable on Code Red days. The Defending your property page can help you decide whether or not you are capable of defending your property – and tells you about the risks and preparations involved.  </p><h3 style="color:#F18520">How to plan</h3><p>Just as every family or household is unique, every fire plan will be different. At an absolute minimum, talk through the ten decisions below with your household. Review these points before each fire season and don’t put it off until later:</p><br/>1. Which Fire Danger Rating is your trigger to leave?<br/>2. Will you leave early that morning or the night before?<br/>3. Where will you go?<br/>4. What route will you take – and what is your alternative in the event that a fire is already in the area?<br/>5. What will you take with you?<br/>6. What do you need to organise for your pets or livestock?<br/>7. Who do you need to keep informed of your movements?<br/>8. Is there anyone outside your household who you need to help or check up on?<br/>9. How will you stay informed about warnings and updates?<br/>10. What will you do if there is a fire in the area and you cannot leave?<p>Remember to decide who will do what as part of your plan.</p><h3 style="color:#F18520">Your destination and journey</h3><p>It’s up to you to decide on a suitable place to go when you leave early on a fire risk day. If you do not have friends or relatives in low-risk areas who you can visit, consider community facilities such as libraries, shopping centres, swimming pools or cinemas. If you don’t have a car you will need to plan carefully to organise transport.</p><h3 style="color:#F18520">Why write down your plan?</h3><p>Would you remember a plan that’s just in your head if you’re surrounded by smoke, heat and flames?A written plan will take the pressure off you, and avoid arguments and delays. In Victoria the bushfire season is long, and a written plan will help reduce uncertainty and anxiety.Remember, any bushfire plan – written or not – is better than no plan.</p><h3 style="color:#F18520">Share your bushfire plan</h3><p>Once you have prepared your plan, it is a good idea to share the details of your plan with family, friends and neighbours. Doing so will save them a lot of distress when there is a bushfire, as they will know that you are prepared and where to find you.</p>'
-   
       }
     ]);
   },
@@ -40,9 +39,9 @@ var FactsView = PageView.extend({
     var nextIndex = this.selectedFact - 1;
     if (nextIndex >= 0 && nextIndex < this.facts.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedFact).removeClass('selected');
+      lis.eq(this.selectedFact).removeClass('highlight');
       this.selectedFact = nextIndex;
-      lis.eq(this.selectedFact).addClass('selected');
+      lis.eq(this.selectedFact).addClass('highlight');
     }
   },
 
@@ -50,9 +49,9 @@ var FactsView = PageView.extend({
     var nextIndex = this.selectedFact + 1;
     if (nextIndex < this.facts.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedFact).removeClass('selected');
+      lis.eq(this.selectedFact).removeClass('highlight');
       this.selectedFact = nextIndex;
-      lis.eq(this.selectedFact).addClass('selected');
+      lis.eq(this.selectedFact).addClass('highlight');
     }
   },
 
@@ -80,7 +79,7 @@ var FactsView = PageView.extend({
     this.$el.append(factsHTML);
 
     var lis = this.$el.find('li');
-    lis.eq(this.selectedFact).addClass('selected');
+    lis.eq(this.selectedFact).addClass('highlight');
 
     return this;
   }
