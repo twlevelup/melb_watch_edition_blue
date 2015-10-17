@@ -31,7 +31,7 @@ var FactsView = PageView.extend({
       },
       {
         id: '3',
-        heading: 'Emergency Alert ',
+        heading: 'Emergency Alert',
         text: 'During floods, SES may provide an alert through the National Emergency Alert Telephone Warning System. All Emergency Services can use Emergency Alert to warn communities about dangerous situations by voice message to landline telephones or text message to mobile phones. If you receive an Emergency Alert you should pay attention and act accordingly.'
       },
       {
@@ -46,9 +46,9 @@ var FactsView = PageView.extend({
     var nextIndex = this.selectedFact - 1;
     if (nextIndex >= 0 && nextIndex < this.facts.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedFact).removeClass('selected');
+      lis.eq(this.selectedFact).removeClass('highlight');
       this.selectedFact = nextIndex;
-      lis.eq(this.selectedFact).addClass('selected');
+      lis.eq(this.selectedFact).addClass('highlight');
     }
   },
 
@@ -56,9 +56,9 @@ var FactsView = PageView.extend({
     var nextIndex = this.selectedFact + 1;
     if (nextIndex < this.facts.length) {
       var lis = this.$el.find('li');
-      lis.eq(this.selectedFact).removeClass('selected');
+      lis.eq(this.selectedFact).removeClass('highlight');
       this.selectedFact = nextIndex;
-      lis.eq(this.selectedFact).addClass('selected');
+      lis.eq(this.selectedFact).addClass('highlight');
     }
   },
 
@@ -86,7 +86,7 @@ var FactsView = PageView.extend({
     this.$el.append(factsHTML);
 
     var lis = this.$el.find('li');
-    lis.eq(this.selectedFact).addClass('selected');
+    lis.eq(this.selectedFact).addClass('highlight');
 
     return this;
   }
