@@ -25,9 +25,36 @@ describe('The Quick Facts Page', function() {
       expect(factsPage.render()).toEqual(factsPage);
     });
 
-    it('displays location header', function() {
+    it('displays quickfacts header', function() {
       factsPage.render();
       expect(factsPage.$el).toContainHtml('<h1>Quick Facts</h1>');
     });
+
+    it('displays flooding details', function(){
+      spyOn(global.App, 'navigate');
+      factsPage.setButtonEvents();
+      factsPage.trigger('right');
+      expect(global.App.navigate).toHaveBeenCalledWith('/quickfacts/1');
+    });
+
+   it('displays earthquake details', function(){
+      spyOn(global.App, 'navigate');
+      factsPage.setButtonEvents();
+      factsPage.trigger('bottom');
+      factsPage.trigger('right');
+
+      expect(global.App.navigate).toHaveBeenCalledWith('/quickfacts/2');
+    });
+
+   it('displays bushfire details', function(){
+    spyOn(global.App, 'navigate');
+    factsPage.setButtonEvents();
+    factsPage.trigger('bottom');
+    factsPage.trigger('bottom');
+    factsPage.trigger('right');
+    expect(global.App.navigate).toHaveBeenCalledWith('/quickfacts/3');
+   });
+
+
   });
 });
